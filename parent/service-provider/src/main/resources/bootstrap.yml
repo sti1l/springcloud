@@ -1,0 +1,63 @@
+spring:
+  application:
+    #应用名称
+    name: service-provider
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      #指定读取的配置，名称前缀
+      name: db
+      #指定读取的配置，名称后缀
+      profile: dev
+      #错误提前，如果无法连接配置服务器，则中止容器启动
+      fail-fast: true
+      username: realz
+      password: realz
+      retry:
+        #初始的重试间隔（ms）,默认1000毫秒
+        initial-interval: 10000
+        #最大重试次数，默认6
+        max-attempts: 10
+        #最大的重试间隔（ms），默认2000毫秒
+        max-interval: 20000
+        #重试间隔的递增系数，默认1.1
+        multiplier: 1.1
+#自定义属性，标识Eureka注册中心的IP地址
+eureka-ip-address: localhost
+eureka:
+  instance:
+    #声明以IP地址进行注册到服务中心
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    metadata-map:
+      send-data: sendData-provider
+  client:
+    serviceUrl:
+      #注册中心
+      defaultZone: http://${eureka-ip-address}:7070/eureka/
+
+management:
+  security:
+    enabled: false
+---
+spring:
+  profiles: config1
+server:
+  #应用端口号
+  port: 7091
+eureka:
+  instance:
+    #注册的IP地址
+    ip-address: localhost
+---
+spring:
+  profiles: config2
+server:
+  #应用端口号
+  port: 7092
+eureka:
+  instance:
+    #注册的IP地址
+    ip-address: localhost

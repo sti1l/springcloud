@@ -1,0 +1,63 @@
+server:
+  #端口号
+  port: 7080
+spring:
+  application:
+    #应用名
+    name: config-server
+  profiles:
+    #表示去SVN仓库读取配置文件
+    active: subversion
+  cloud:
+    config:
+      server:
+        svn:  
+          uri: https://114.67.104.138/svn/RealzRepository
+          username: realz  
+          password: realz 
+          basedir: /realz/data
+        default-label: config-repo
+#自定义属性，标识Eureka注册中心的IP地址
+eureka-ip-address: localhost
+eureka:
+  instance:
+    #声明以IP地址进行注册到服务中心
+    prefer-ip-address: true
+    #注册的IP地址
+    ip-address: localhost
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    #客户端实例向服务器发送周期性心跳间隔（s），默认30秒
+    lease-renewal-interval-in-seconds: 60
+    #定义元数据，传递给其他客户端使用
+    metadata-map:
+      send-data: sendData
+  client:
+    #声明是否将自己的信息注册到Eureka服务器
+    registerWithEureka: true
+    #声明是否到Eureka服务器抓取注册信息
+    fetch-registry: true
+    #表示eureka client间隔多久去拉取服务注册信息（s），默认为30秒
+    registry-fetch-interval-seconds: 60
+    #复制实例变化信息到eureka服务器所需要的时间间隔（s），默认为30秒
+    instanceInfoReplicationIntervalSeconds: 60
+    serviceUrl:
+      #注册中心
+      defaultZone: http://${eureka-ip-address}:7070/eureka/
+              
+management:
+  security:
+    enabled: false
+#encrypt:
+#  key: myKey
+#encrypt:
+  #keyStore:
+    #location: classpath:/myTest.keystore  # keystroe位置
+    #password: keystore                     # 密钥库的
+    #alias: keystore                        # 密钥对的别名
+    #secret: keystore                       # 密钥口令
+    
+security:
+  user:
+    name: realz
+    password: realz
+              
