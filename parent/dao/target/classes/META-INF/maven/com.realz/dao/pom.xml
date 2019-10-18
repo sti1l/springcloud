@@ -46,4 +46,17 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+	
+	<!-- 解决spring-boot-maven-plugin打包出来的jar不可依赖的问题 -->
+	<build>  
+	    <plugins>  
+	        <plugin>  
+	            <groupId>org.springframework.boot</groupId>  
+	            <artifactId>spring-boot-maven-plugin</artifactId>  
+	            <configuration>  
+	                <classifier>exec</classifier>  
+	            </configuration>  
+	        </plugin>  
+	    </plugins>  
+	  </build>
 </project>

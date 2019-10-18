@@ -118,5 +118,8 @@
 		<module>dao</module>
 		<module>entity</module>
     <module>service-provider</module>
+    <module>feign</module>
+    <module>interface</module>
+    <module>cdm-interface</module>
   </modules>
 </project>

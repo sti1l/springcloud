@@ -4,6 +4,7 @@ com\realz\dao\ReadObjectDao.class
 com\realz\dao\util\TimeUtil.class
 META-INF\spring-configuration-metadata.json
 com\realz\dao\util\SqlUtil.class
+com\realz\Application.class
 com\realz\dao\impl\AbstractReadObjectDao.class
 com\realz\dao\ReadAndWriteObjectDao.class
 com\realz\dao\impl\ReadObjectDaoImpl.class

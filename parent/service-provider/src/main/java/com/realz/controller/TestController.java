@@ -1,4 +1,4 @@
-package com.realz.service.provider.controller;
+package com.realz.controller;
 
 import javax.annotation.Resource;
 
@@ -14,7 +14,7 @@ public class TestController {
 	@Resource
 	private ReadAndWriteObjectDao rwd;
 	
-	@RequestMapping("hello")
+	@RequestMapping("/hello")
 	public String hello() {
 		Person person = new Person();
 		person.setAge(1);

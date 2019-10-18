@@ -1,4 +1,4 @@
-package realz.config.server;
+package com.realz;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;

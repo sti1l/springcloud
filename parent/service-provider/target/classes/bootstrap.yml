@@ -1,3 +1,6 @@
+server:
+  #应用端口号
+  port: 7091
 spring:
   application:
     #应用名称
@@ -25,9 +28,11 @@ spring:
         #重试间隔的递增系数，默认1.1
         multiplier: 1.1
 #自定义属性，标识Eureka注册中心的IP地址
-eureka-ip-address: localhost
+eureka-ip-address: 114.67.104.138
 eureka:
   instance:
+    #注册的IP地址
+    ip-address: localhost
     #声明以IP地址进行注册到服务中心
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
@@ -37,27 +42,7 @@ eureka:
     serviceUrl:
       #注册中心
       defaultZone: http://${eureka-ip-address}:7070/eureka/
-
 management:
   security:
     enabled: false
----
-spring:
-  profiles: config1
-server:
-  #应用端口号
-  port: 7091
-eureka:
-  instance:
-    #注册的IP地址
-    ip-address: localhost
----
-spring:
-  profiles: config2
-server:
-  #应用端口号
-  port: 7092
-eureka:
-  instance:
-    #注册的IP地址
-    ip-address: localhost
+    

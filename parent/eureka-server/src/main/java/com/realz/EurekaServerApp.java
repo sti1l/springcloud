@@ -1,4 +1,4 @@
-package com.realz.eureka.server;
+package com.realz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
