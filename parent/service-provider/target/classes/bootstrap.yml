@@ -11,7 +11,7 @@ spring:
         enabled: true
         service-id: config-server
       #指定读取的配置，名称前缀
-      name: db
+      name: db,config
       #指定读取的配置，名称后缀
       profile: dev
       #错误提前，如果无法连接配置服务器，则中止容器启动
@@ -26,7 +26,12 @@ spring:
         #最大的重试间隔（ms），默认2000毫秒
         max-interval: 20000
         #重试间隔的递增系数，默认1.1
-        multiplier: 1.1
+        multiplier: 1.1  
+  zipkin:
+    locator:      discovery:        enabled: true    base-url: http://114.67.104.138:7060/
+  sleuth:    sampler:      percentage: 1.0
+    web:      skip-pattern: (^cleanup.*)
+    
 #自定义属性，标识Eureka注册中心的IP地址
 eureka-ip-address: 114.67.104.138
 eureka:
@@ -45,4 +50,6 @@ eureka:
 management:
   security:
     enabled: false
+    
+
     
