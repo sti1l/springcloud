@@ -8,8 +8,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 @EnableFeignClients
-public class InterfaceApp {
+public class CdmInterfaceApp {
 	public static void main(String[] args) {
-		SpringApplication.run(InterfaceApp.class, args);
+		SpringApplication.run(CdmInterfaceApp.class, args);
 	}
 }
