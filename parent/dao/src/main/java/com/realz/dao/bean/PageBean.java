@@ -2,36 +2,36 @@ package com.realz.dao.bean;
 
 public class PageBean {
 
-	//当前页
+	// 当前页
 	private int curpage = 1;
-	//每页显示数量
+	// 每页显示数量
 	private int pagesize = 10;
-	//总页数
+	// 总页数
 	private int totalpage;
-	//数据总数
+	// 数据总数
 	private int totalNum;
-	//下一页页数
+	// 下一页页数
 	private int nextpage;
-	//排序类型：0降序，1升序
+	// 排序类型：0降序，1升序
 	private int sorttype;
-	//是否需要重新统计(0:不需要，1：需要)
+	// 是否需要重新统计(0:不需要，1：需要)
 	private int isnewcomp = 1;
 
-	//操作类型(pre:上一页，next:下一页，first:首页，final:尾页)
+	// 操作类型(pre:上一页，next:下一页，first:首页，final:尾页)
 	private String opertype;
-	//排序字段(默认根据ID降序)
+	// 排序字段(默认根据ID降序)
 	private String sortfeild = "id";
 
 	public void updatePage() {
-		this.totalpage = totalNum/pagesize+(totalNum%pagesize==0?0:1); 
-		if(this.curpage > this.totalpage && isnewcomp == 1) {
+		this.totalpage = totalNum / pagesize + (totalNum % pagesize == 0 ? 0 : 1);
+		if (this.curpage > this.totalpage && isnewcomp == 1) {
 			this.curpage = this.totalpage;
 		}
 		setNextpage();
-		if(opertype != null) {
-			switch(this.opertype) {
+		if (opertype != null) {
+			switch (this.opertype) {
 			case "pre":
-				if(this.curpage > 1) {
+				if (this.curpage > 1) {
 					this.curpage--;
 				}
 				break;
@@ -96,9 +96,9 @@ public class PageBean {
 	}
 
 	public void setNextpage() {
-		if(this.totalpage > this.curpage) {
-			this.nextpage = this.curpage+1;
-		}else {
+		if (this.totalpage > this.curpage) {
+			this.nextpage = this.curpage + 1;
+		} else {
 			this.nextpage = this.curpage;
 		}
 	}
@@ -133,9 +133,5 @@ public class PageBean {
 				+ totalNum + ", nextpage=" + nextpage + ", sorttype=" + sorttype + ", isnewcomp=" + isnewcomp
 				+ ", opertype=" + opertype + ", sortfeild=" + sortfeild + "]";
 	}
-
-
-
-
 
 }

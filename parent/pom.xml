@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.realz</groupId>
@@ -14,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.8.RELEASE</version>
-		<relativePath/>
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -23,6 +25,7 @@
 		<java.version>1.8</java.version>
 		<!-- spring-cloud 版本 -->
 		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
+		<elasticsearch.version>5.4.0</elasticsearch.version>
 	</properties>
 
 	<build>
@@ -110,6 +113,26 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.2</version>
 			</dependency>
+
+			<!-- Elasticsearch核心依赖包 -->
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>transport</artifactId>
+				<version>${elasticsearch.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elasticsearch.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>1.5.8.RELEASE</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<modules>
@@ -121,6 +144,6 @@
 		<module>feign</module>
 		<module>cdm-interface</module>
 		<module>zk-server</module>
-    <module>zuul-gateway</module>
-  </modules>
+		<module>zuul-gateway</module>
+	</modules>
 </project>

@@ -36,10 +36,10 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<!-- 使用svn作为配置中心 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.tmatesoft.svnkit</groupId>
 			<artifactId>svnkit</artifactId>
-		</dependency>
+		</dependency> -->
 		<!-- 注册中心安全配置，访问权限 -->
 		<dependency>    
 		  <groupId>org.springframework.boot</groupId>    

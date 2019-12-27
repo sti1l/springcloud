@@ -10,8 +10,8 @@ import java.util.GregorianCalendar;
 
 /**
  * 日期相关工具类
- * @author yinlijun
- * @since  2016/01/05
+ * @author sti1l
+ *
  */
 public class TimeUtil {
 	

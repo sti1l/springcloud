@@ -26,7 +26,7 @@ spring:
         #最大的重试间隔（ms），默认2000毫秒
         max-interval: 20000
         #重试间隔的递增系数，默认1.1
-        multiplier: 1.1  
+        multiplier: 1.1 
   zipkin:
     locator:      discovery:        enabled: true    base-url: http://114.67.104.138:7060/
   sleuth:    sampler:      percentage: 1.0
@@ -37,7 +37,7 @@ eureka-ip-address: 114.67.104.138
 eureka:
   instance:
     #注册的IP地址
-    ip-address: localhost
+    ip-address: 114.67.104.138
     #声明以IP地址进行注册到服务中心
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
@@ -50,6 +50,7 @@ eureka:
 management:
   security:
     enabled: false
+    
     
 
     
