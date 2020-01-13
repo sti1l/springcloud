@@ -27,8 +27,11 @@ spring:
         max-interval: 20000
         #重试间隔的递增系数，默认1.1
         multiplier: 1.1 
+        
+##监控项目
   zipkin:
-    locator:      discovery:        enabled: true    base-url: http://114.67.104.138:7060/
+    locator:      discovery:        enabled: true    ## base-url: http://192.168.100.78:7060/ 默认地址是 http://localhost:9411/
+    ## 注: 添加zipkin的依赖后, 项目首先访问的是 默认地址. 如果访问不到, 会报错.
   sleuth:    sampler:      percentage: 1.0
     web:      skip-pattern: (^cleanup.*)
       
