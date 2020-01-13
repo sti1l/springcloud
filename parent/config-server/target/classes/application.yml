@@ -14,13 +14,13 @@ spring:
           username: sti1l
           password: fsj,404
 #自定义属性，标识Eureka注册中心的IP地址
-eureka-ip-address: 114.67.104.138
+eureka-ip-address: 192.168.100.78
 eureka:
   instance:
     #声明以IP地址进行注册到服务中心
     prefer-ip-address: true
     #注册的IP地址
-    ip-address: 114.67.104.138
+    ip-address: 192.168.100.78
     instance-id: ${eureka.instance.ip-address}:${server.port}
     #客户端实例向服务器发送周期性心跳间隔（s），默认30秒
     lease-renewal-interval-in-seconds: 60
@@ -37,7 +37,7 @@ eureka:
     #复制实例变化信息到eureka服务器所需要的时间间隔（s），默认为30秒
     instanceInfoReplicationIntervalSeconds: 60
     serviceUrl:
-      #注册中心
+    #注册中心
       defaultZone: http://${eureka-ip-address}:7070/eureka/
               
 management:

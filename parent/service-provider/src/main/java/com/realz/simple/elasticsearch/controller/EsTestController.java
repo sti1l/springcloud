@@ -1,4 +1,4 @@
-package com.realz.controller;
+package com.realz.simple.elasticsearch.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,43 +15,22 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.realz.common.GoodsComponent;
-import com.realz.config.ESTransportClient;
 import com.realz.dao.ReadAndWriteObjectDao;
-import com.realz.entity.Person;
+import com.realz.simple.elasticsearch.client.ESTransportClient;
+import com.realz.simple.elasticsearch.common.GoodsComponent;
 
-@RestController
-public class TestController {
-
+/**
+ * ES Controller类
+ * @author sti1l
+ *
+ */
+public class EsTestController {
+	
 	@Resource
 	private ReadAndWriteObjectDao rwd;
-
-	@Value("${name}")
-	private String name;
-
-	@RequestMapping("/hello")
-	public String hello() {
-		Person person = new Person();
-		person.setAge(1);
-		person.setCompany("苏州百捷");
-		person.setName("realz");
-
-		rwd.addObject(person);
-
-		Integer id = person.getId();
-		return "person创建成功 id为: " + id;
-	}
-
-	// 测试从配置文件中获取
-	@RequestMapping("/getConfig")
-	public String getConfig() {
-		return name;
-	}
-
+	
 	/**
 	 * 测试批量创建索引
 	 * 
@@ -138,8 +117,6 @@ public class TestController {
 	public String testHighnight() {
 		return "<h1>ssss</h1>";
 	}
-	
-	
 	
 	
 	/**

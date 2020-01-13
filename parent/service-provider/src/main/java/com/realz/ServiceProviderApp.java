@@ -7,6 +7,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * service-provider启动类
+ * @author sti1l
+ *
+ */
 @SpringCloudApplication
 @EnableFeignClients
 @EnableCircuitBreaker

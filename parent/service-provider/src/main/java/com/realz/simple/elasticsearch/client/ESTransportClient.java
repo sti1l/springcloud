@@ -1,4 +1,4 @@
-package com.realz.config;
+package com.realz.simple.elasticsearch.client;
 
 import java.net.InetSocketAddress;
 

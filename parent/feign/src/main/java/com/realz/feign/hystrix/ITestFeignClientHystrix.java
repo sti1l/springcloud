@@ -9,7 +9,11 @@ public class ITestFeignClientHystrix implements ITestFeignClient{
 
 	@Override
 	public String hello() {
-		// TODO Auto-generated method stub
+		return "服务熔断了~";
+	}
+
+	@Override
+	public String getConfig() {
 		return "服务熔断了~";
 	}
 

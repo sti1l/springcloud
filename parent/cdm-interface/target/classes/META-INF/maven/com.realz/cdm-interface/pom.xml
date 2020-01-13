@@ -77,11 +77,11 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.realz</groupId>
 			<artifactId>dao</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 
 
 		<dependency>

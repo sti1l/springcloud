@@ -10,11 +10,11 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-      #指定读取的配置，名称前缀
+        #指定读取的配置，名称前缀
       name: db,config
-      #指定读取的配置，名称后缀
+        #指定读取的配置，名称后缀
       profile: dev
-      #错误提前，如果无法连接配置服务器，则中止容器启动
+        #错误提前，如果无法连接配置服务器，则中止容器启动
       fail-fast: true
       username: realz
       password: realz
@@ -31,13 +31,27 @@ spring:
     locator:      discovery:        enabled: true    base-url: http://114.67.104.138:7060/
   sleuth:    sampler:      percentage: 1.0
     web:      skip-pattern: (^cleanup.*)
+      
+##中文乱码
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true   
+  
+##debug模式不重启生效
+  thymeleaf:    cache: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
     
 #自定义属性，标识Eureka注册中心的IP地址
-eureka-ip-address: 114.67.104.138
+eureka-ip-address: 192.168.100.78
 eureka:
   instance:
     #注册的IP地址
-    ip-address: 114.67.104.138
+    ip-address: 192.168.100.78
     #声明以IP地址进行注册到服务中心
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}

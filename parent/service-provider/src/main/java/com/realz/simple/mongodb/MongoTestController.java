@@ -1,4 +1,4 @@
-package com.realz.controller;
+package com.realz.simple.mongodb;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.realz.mongo.MongoDao;
  *
  */
 @RestController
-public class TestMongoController {
+public class MongoTestController {
 
 	@Autowired
 	private MongoDao dao;
@@ -32,18 +32,23 @@ public class TestMongoController {
 		User data = new User();
 		
 		data.setAge(2);
-		data.setName("realz2");
+		data.setName("sti1l");
 		data.setCompany("jht");
 		dao.insert(data);
 
 		return "保存成功 , id ：" + data.getId();
 	}
 	
-	
+	/**
+	 * 查询集合中的所有
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/findAll")
 	public List<User> findAll() {
 
 		return dao.findAll(User.class);
 	}
+	
 
 }

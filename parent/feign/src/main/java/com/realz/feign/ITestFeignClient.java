@@ -10,5 +10,12 @@ public interface ITestFeignClient {
 	
 	@RequestMapping("/hello")
 	public String hello();
+	
+	/**
+	 * 获取配置name
+	 * @return
+	 */
+	@RequestMapping("/getConfig")
+	public String getConfig();
 
 }

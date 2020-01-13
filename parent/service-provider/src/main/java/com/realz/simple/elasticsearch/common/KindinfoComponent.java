@@ -1,4 +1,4 @@
-package com.realz.common;
+package com.realz.simple.elasticsearch.common;
 
 import java.io.IOException;
 
